@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAFE STEEL SUPPLY Home</title>
+    <link rel="stylesheet" href="./Assets/css/styles.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="./Assets/images/logo-removebg-preview (3).png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   
+ <style>
+ 
+ .alt-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.alt-header {
+  background-color:white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.alt-header h1 {
+  color: #070707;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+
+}
+.alt-header p {
+  color: #070707;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.alt-header img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.alt-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+
+.alt-card {
+  background-color: #ffffff;
+  padding: 24px;
+  text-align: center;
+  border: 2px solid rgb(182, 4, 4);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+.alt-card i {
+  color: #e3342f;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.alt-card h2 {
+  color: #070707;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.alt-card p {
+  color: #070707;
+}
+.alt-card-content {
+  display: none;
+  background-color: #ffffff;
+  padding: 16px;
+  border: 4px solid red;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+}
+.alt-card-content p {
+  margin-bottom: 8px;
+  
+}
+.alt-card-content button {
+  background-color: #e3342f;
+  color: #0a0a0a;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.alt-about-us {
+  text-align: center;
+  margin-top: 32px;
+}
+.alt-about-us h2 {
+  color: #070707;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+}
+.alt-about-us h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 4px;
+}
+
+
+.alt-red-shadow {
+  box-shadow: 0 0 25px red;
+}
+
+
+/* For small screens (mobile-first is already covered) */
+
+/* Medium screens (Tablets) */
+@media (min-width: 600px) {
+  .alt-cards {
+    grid-template-columns: repeat(2, 1fr); /* Display two cards per row */
+  }
+
+  .alt-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .alt-header p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large screens (Laptops & Desktops) */
+@media (min-width: 1024px) {
+  .alt-header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .alt-header div {
+    width: 48%;
+  }
+
+  .alt-cards {
+    grid-template-columns: repeat(3, 1fr); /* Display three cards per row */
+  }
+
+  .alt-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .alt-about-us h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra-large screens (High-resolution monitors) */
+@media (min-width: 1440px) {
+  .alt-container {
+    max-width: 1400px;
+  }
+
+  .alt-cards {
+    grid-template-columns: repeat(4, 1fr); /* Display four cards per row */
+  }
+
+  .alt-header h1 {
+    font-size: 3rem;
+  }
+
+  .alt-card {
+    padding: 32px;
+  }
+
+  .alt-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./Assets/images/logo-removebg-preview (3).png" alt="MERAFE STEEL SUPPLY (PTY) LTD">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#" class="explore">EXPLORE MORE</a></li>
+              
+              
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>MERAFE STEEL SUPPLY (PTY) LTD</h1>
+            <p>Merafe Steel Supply (Pty) Ltd is a trusted 
+                provider of high-quality steel products and
+                 engineering solutions . We specialize in steel supply,
+                  fabrication, machining, industrial cleaning, and hydraulic 
+                  solutions, ensuring efficiency, precision, and reliability 
+                  in every project. </p>
+                   <button class="btn" onclick="location.href='#'">GET IN TOUCH</button>
+
+        </div>
+    </section>
+    <div class="container">
+      <div class="title">PRODUCT RANGE</div>
+      <div class="product-grid">
+      <div class="product-card">
+      <img src="./Assets/images/12.jpeg" alt="Steel - Image of steel products">
+      <h3>STEEL</h3>
+      <a onclick="toggleDescription('desc1')">View &gt;</a>
+      <div id="desc1" class="product-description">
+      
+                          High-quality steel for various industrial applications.
+      </div>
+      </div>
+      <div class="product-card">
+      <img src="./Assets/images/58.jpeg" alt="Pipes - Image of metal pipes">
+      <h3>PIPES</h3>
+      <a onclick="toggleDescription('desc2')">View &gt;</a>
+      <div id="desc2" class="product-description">
+      
+                          Durable pipes suitable for a wide range of uses.
+      </div>
+      </div>
+      <div class="product-card">
+      <img src="./Assets/images/00.jpg" alt="Fittings - Image of metal fittings">
+      <h3>FITTINGS</h3>
+      <a onclick="toggleDescription('desc3')">View &gt;</a>
+      <div id="desc3" class="product-description">
+      
+         Precision-engineered fittings for various applications.
+      </div>
+      </div>
+      <div class="product-card">
+      <img src="./Assets/images/Nuts-and-bolts.jpg" alt="Bolts & Nuts - Image of bolts and nuts">
+      <h3>BOLTS & NUTS</h3>
+      <a onclick="toggleDescription('desc4')">View &gt;</a>
+      <div id="desc4" class="product-description">
+      
+                          High-strength bolts and nuts for secure connections.
+      </div>
+      </div>
+      <div class="product-card">
+      <img src="./Assets/images/fabrication.jpg" alt="Fabrication - Image of fabrication process">
+      <h3>FABRICATION</h3>
+      <a onclick="toggleDescription('desc5')">View &gt;</a>
+      <div id="desc5" class="product-description">
+      
+                          Custom fabrication services for various needs.
+      </div>
+      </div>
+      <div class="product-card">
+      <img src="./Assets/images/cnc-milling-machine.jpg" alt="Machining - Image of machining process">
+      <h3>MACHINING</h3>
+      <a onclick="toggleDescription('desc6')">View &gt;</a>
+      <div id="desc6" class="product-description">
+      
+                          Precision machining services for high-quality parts.
+      </div>
+      </div>
+      </div>
+      <a class="view-products-btn" href="products.html">View More Products</a>
+      </div>
+
+
+      <div class="alt-container">
+        <div class="alt-about-us">
+            <h2>About Us</h2>
+        </div>
+        <div class="alt-container">
+            <div class="alt-header">
+                <div>
+                    <h1>Merafe Steel Supply</h1>
+                    <p>Merafe Steel Supply is continually striving to provide the highest possible service levels to its customers by continually improving costs and lead times whilst maintaining an emphasis on quality. We strive to deliver consistent quality efficiently, and to deliver on time. To do our utmost best to maintain a safe working environment. We trust that we will remain a long term reliable partner for our valued clients.</p>
+                </div>
+                <div>
+                    <img src="./Assets/images/61.jpeg" alt="Decorative image related to the company" width="500" height="400" style="box-shadow: 0 0 10px red;">
+                </div>
+            </div>
+            <div class="alt-cards">
+                <div class="alt-card" onclick="toggleCardContent('experience-content')">
+                    <i class="fas fa-award"></i>
+                    <h2>Experience</h2>
+                    <p>12 years of activity</p>
+                    <div id="experience-content" class="alt-card-content">
+                        <p>We have over 12 years of experience in the industry, providing top-notch services and products to our clients.</p>
+                        <button onclick="viewMore('experience-content')">View More</button>
+                    </div>
+                </div>
+                <div class="alt-card" onclick="toggleCardContent('team-content')">
+                    <i class="fas fa-users"></i>
+                    <h2>Team</h2>
+                    <p>Professionals in the industry</p>
+                    <div id="team-content" class="alt-card-content">
+                        <p>Our team consists of highly skilled professionals dedicated to delivering the best results.</p>
+                        <button onclick="viewMore('team-content')">View More</button>
+                    </div>
+                </div>
+                <div class="alt-card" onclick="toggleCardContent('equipment-content')">
+                    <i class="fas fa-cogs"></i>
+                    <h2>State of the art</h2>
+                    <p>Equipment</p>
+                    <div id="equipment-content" class="alt-card-content">
+                        <p>We use state-of-the-art equipment to ensure the highest quality of our products and services.</p>
+                        <button onclick="viewMore('equipment-content')">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleCardContent(id) {
+            var content = document.getElementById(id);
+            var allContents = document.querySelectorAll('.alt-card-content');
+            allContents.forEach(function(item) {
+                if (item !== content) {
+                    item.style.display = 'none';
+                }
+            });
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    
+        function viewMore(id) {
+            alert("Viewing more details for " + id);
+        }
+    </script>
+    
+
+     
+
+
+
+  <script src="./Assets/javascript/script.js"></script>
+</body>
+</html>
