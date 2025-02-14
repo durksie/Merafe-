@@ -43,3 +43,22 @@ function toggleDescription(id) {
     }
 
 }
+
+function toggleCardContent(id) {
+    var content = document.getElementById(id);
+    var allContents = document.querySelectorAll('.alt-card-content');
+    allContents.forEach(function(item) {
+        if (item !== content) {
+            item.style.display = 'none';
+        }
+    });
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
+
+function viewMore(id) {
+    alert("Viewing more details for " + id);
+}

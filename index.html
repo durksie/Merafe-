@@ -8,194 +8,64 @@
     <script src="script.js" defer></script>
     <link rel="icon" type="image/svg+xml" href="./Assets/images/logo-removebg-preview (3).png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
    
- <style>
- 
- .alt-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
-}
-.alt-header {
-  background-color:white;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.alt-header h1 {
-  color: #070707;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 16px;
-  font-family: 'Arial', sans-serif;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
-
-}
-.alt-header p {
-  color: #070707;
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
-.alt-header img {
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.alt-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-
-.alt-card {
-  background-color: #ffffff;
-  padding: 24px;
-  text-align: center;
-  border: 2px solid rgb(182, 4, 4);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  position: relative;
-}
-.alt-card i {
-  color: #e3342f;
-  font-size: 2rem;
-  margin-bottom: 16px;
-}
-.alt-card h2 {
-  color: #070707;
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-.alt-card p {
-  color: #070707;
-}
-.alt-card-content {
-  display: none;
-  background-color: #ffffff;
-  padding: 16px;
-  border: 4px solid red;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  z-index: 10;
-}
-.alt-card-content p {
-  margin-bottom: 8px;
-  
-}
-.alt-card-content button {
-  background-color: #e3342f;
-  color: #0a0a0a;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.alt-about-us {
-  text-align: center;
-  margin-top: 32px;
-}
-.alt-about-us h2 {
-  color: #070707;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  position: relative;
-  display: inline-block;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
-}
-.alt-about-us h2::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  margin: 0 auto;
-  margin-top: 4px;
-}
-
-
-.alt-red-shadow {
-  box-shadow: 0 0 25px red;
-}
-
-
-/* For small screens (mobile-first is already covered) */
-
-/* Medium screens (Tablets) */
-@media (min-width: 600px) {
-  .alt-cards {
-    grid-template-columns: repeat(2, 1fr); /* Display two cards per row */
-  }
-
-  .alt-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .alt-header p {
-    font-size: 1.1rem;
-  }
-}
-
-/* Large screens (Laptops & Desktops) */
-@media (min-width: 1024px) {
-  .alt-header {
+    <style>
+      .contact-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  .alt-header div {
-    width: 48%;
-  }
-
-  .alt-cards {
-    grid-template-columns: repeat(3, 1fr); /* Display three cards per row */
-  }
-
-  .alt-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .alt-about-us h2 {
-    font-size: 2.5rem;
-  }
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto; /* Centers the container horizontally */
 }
 
-/* Extra-large screens (High-resolution monitors) */
-@media (min-width: 1440px) {
-  .alt-container {
-    max-width: 1400px;
-  }
-
-  .alt-cards {
-    grid-template-columns: repeat(4, 1fr); /* Display four cards per row */
-  }
-
-  .alt-header h1 {
-    font-size: 3rem;
-  }
-
-  .alt-card {
-    padding: 32px;
-  }
-
-  .alt-card h2 {
-    font-size: 1.5rem;
-  }
+.contact-content h2 {
+    color: #070707;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+    position: relative;
 }
 
-</style>
+.contact-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%; /* Adjusts the width to half */
+    border-bottom: 2px solid #070707; /* Adds the underline */
+}
+
+      
+      .contact-content p {
+          font-size: 16px;
+          margin-bottom: 20px;
+          color: black;
+      }
+      .contact-info {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 15px;
+      }
+      .contact-info-icon {
+          color: red;
+          font-size: 24px;
+          margin-right: 10px;
+      }
+      .map-container {
+            width: 900px;
+            height: 400px;
+            box-shadow: 0 0 10px red;
+            border: 0;
+        }
+  </style>
 </head>
 <body>
     <header>
@@ -254,7 +124,7 @@
       </div>
       </div>
       <div class="product-card">
-      <img src="./Assets/images/00.jpg" alt="Fittings - Image of metal fittings">
+      <img src="./Assets/images/DALL·E 2025-02-14 09.59.28 - A high-quality image of various industrial pipe fittings, including stainless steel elbows, tees, reducers, and flanges. The fittings should be polish.webp" alt="Fittings - Image of metal fittings">
       <h3>FITTINGS</h3>
       <a onclick="toggleDescription('desc3')">View &gt;</a>
       <div id="desc3" class="product-description">
@@ -302,11 +172,12 @@
             <div class="alt-header">
                 <div>
                     <h1>Merafe Steel Supply</h1>
-                    <p>Merafe Steel Supply is continually striving to provide the highest possible service levels to its customers by continually improving costs and lead times whilst maintaining an emphasis on quality. We strive to deliver consistent quality efficiently, and to deliver on time. To do our utmost best to maintain a safe working environment. We trust that we will remain a long term reliable partner for our valued clients.</p>
+                    <p>Merafe Steel Supply is continually striving to provide the highest possible service levels to its customers by continually improving costs and lead times whilst maintaining an emphasis on quality. We strive to deliver consistent quality efficiently, and to deliver on time. To do our utmost best to maintain a safe working environment. We trust that we will remain a long-term reliable partner for our valued clients.</p>
                 </div>
-                <div>
-                    <img src="./Assets/images/61.jpeg" alt="Decorative image related to the company" width="500" height="400" style="box-shadow: 0 0 10px red;">
-                </div>
+                <img src="./Assets/images/20.jpeg" alt="Merafe Steel Supply Location" class="image-container">
+                <script>
+                    document.addEventListener("DOMContentLoaded", initMap);
+                </script>
             </div>
             <div class="alt-cards">
                 <div class="alt-card" onclick="toggleCardContent('experience-content')">
@@ -339,25 +210,126 @@
             </div>
         </div>
     </div>
+
+    <div class="contact-container">
+      <div class="contact-content">
+          <h2>Get in touch</h2>
+          <p>Looking for high-quality steel products? Visit Merafe Steel Supply, your trusted partner for all steel needs. Our headquarters is conveniently located for easy access, ensuring you get the best service and top-tier materials.</p>
+          <div class="contact-info">
+              <i class="fas fa-map-marker-alt contact-info-icon"></i>
+              <div>
+                  <h3>Head Office</h3>
+                  <p>126 GENERAL HERTZOG STR THREE RIVER VEREENIGING 1930</p>
+              </div>
+          </div>
+          <div class="contact-info">
+              <i class="fas fa-envelope contact-info-icon"></i>
+              <div>
+                  <h3>Email us</h3>
+                  <p>merafesteelsupply@gmail.com</p>
+              </div>
+          </div>
+          <div class="contact-info">
+              <i class="fas fa-phone contact-info-icon"></i>
+              <div>
+                  <h3>Call us</h3>
+                  <p>016 931 0611, 016 4231203, 016 423 1364</p>
+              </div>
+          </div>
+      </div>
+      <div id="map" class="map-container"></div>
+  </div>
+
+  <footer>
+    <div class="footercontainer">
+     <div class="footer-content">
+      <div class="footer-column">
+       <img alt="MERAFE STEEL SUPPLY (PTY) LTD" height="100" src="./Assets/images/logo-removebg-preview (3).png"/>
+      </div>
+      <div class="footer-columns">
+       <div class="footer-column">
+        <h3>Company</h3>
+        <ul>
+         <li><a href="#">How it works</a></li>
+         <li><a href="#">About us</a></li>
+         <li><a href="#">Services</a></li>
+        </ul>
+       </div>
+       <div class="footer-column">
+        <h3>Quick Link</h3>
+        <ul>
+         <li><a href="#">Pricing</a></li>
+         <li><a href="#">Resources</a>
+         </li>
+         <li><a href="#">Products</a></li>
+        </ul>
+       </div>
+       <div class="footer-column ">
+        <h3>CONTACT INFO</h3>
+        <ul>
+         <li><i class="fas fa-map-marker-alt"></i>
+          126 GENERAL HERTZOG STR<br/>THREE RIVER VEREENIGING 1930
+         </li>
+         <li><i class="fas fa-envelope"></i> merafesteelsupply@gmail.com</li>
+         <li><i class="fas fa-phone"></i>16 931 0611</li>
+        </ul>
+       </div>
+       <div class="footer-column subscribe">
+        <h3>Subscribe
+        </h3>
+        <form class="subscribe-form">
+         <input placeholder="Get product updates" type="email"/>
+         <button type="submit">
+          <i class="fas fa-arrow-right">
+          </i>
+         </button>
+        </form>
+       </div>
+      </div>
+     </div>
+     <div class="fade-line"></div>
+     <div class="footer-bottom">
+      <p>© 2025 MERAFE STEEL SUPPLY (PTY) LTD. All rights reserved
+      </p>
+      <div class="social-icons">
+       <a href="#">
+        <i class="fab fa-linkedin">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fab fa-facebook">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fab fa-whatsapp">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fas fa-envelope">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fas fa-phone">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+
     <script>
-        function toggleCardContent(id) {
-            var content = document.getElementById(id);
-            var allContents = document.querySelectorAll('.alt-card-content');
-            allContents.forEach(function(item) {
-                if (item !== content) {
-                    item.style.display = 'none';
-                }
-            });
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
-    
-        function viewMore(id) {
-            alert("Viewing more details for " + id);
-        }
+         document.addEventListener("DOMContentLoaded", function () {
+        var location = { lat: -26.6731, lng: 27.9316 }; // Approximate coordinates for Vereeniging
+        var map = L.map('map').setView([location.lat, location.lng], 15);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        L.marker([location.lat, location.lng]).addTo(map)
+            .bindPopup('Merafe Steel Supply Location')
+            .openPopup();
+    });
     </script>
     
 

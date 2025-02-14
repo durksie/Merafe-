@@ -1,239 +1,226 @@
-<html>
-<head>
-<title>Product Range</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Footer Example
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+  
+   footer {
+    font-family: Arial, sans-serif;
+     margin-top: auto;
+     background-color: white;
+     padding: 2rem 0;
+   }
+   .footercontainer {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 1rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   .footer-content {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+   }
+   .footer-content img {
+     margin-bottom: 1rem;
+     padding: 30px;
+   }
+   .footer-columns {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+     gap: 2rem;
+   }
+   .footer-column {
+     margin-bottom: 1rem;
+     text-align: center;
+     white-space: nowrap;
+   }
+   .footer-column h3 {
+     font-weight: bold;
+     margin-bottom: 0.5rem;
+     white-space: nowrap;
+     color: red;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a soft shadow */
+   }
+   .footer-column ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
+   .footer-column ul li {
+     margin-bottom: 0.5rem;
+   }
+   .footer-column ul li a {
+     color:black;
+     text-decoration: none;
+   }
+   .footer-column ul li a:hover {
+     color: red;
+   }
+   .subscribe-form {
+     display: flex;
+   }
+   .subscribe-form input {
+     padding: 0.5rem;
+     border: 1px solid #ccc;
+     border-radius: 0.25rem 0 0 0.25rem;
+     outline: none;
+   }
+   .subscribe-form button {
+     padding: 0.5rem;
+     background-color:black;
+     color: white;
+     border: none;
+     border-radius: 0 0.25rem 0.25rem 0;
+     cursor: pointer;
+   }
+   .subscribe-form button:hover {
+  background-color: red; /* Change background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
 
-        body {
 
-            font-family: Arial, sans-serif;
-
-            background-color: #f5f5f5;
-
-            margin: 0;
-
-            padding: 0;
-
+.fade-line {
+            width: 100%;
+            height: 1px; /* Thickness of the line */
+            background: black;
         }
-
-        .container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 20px;
-
-        }
-
-        .title {
-
-            font-size: 24px;
-
-            font-weight: bold;
-
-            color: #e60000;
-
-            margin-bottom: 20px;
-
-        }
-
-        .product-grid {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 20px;
-
-        }
-
-        .product-card {
-
-            background-color: #fff;
-
-            border-radius: 10px;
-
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-            flex: 1 1 calc(33.333% - 20px);
-
-            max-width: calc(33.333% - 20px);
-
-            text-align: center;
-
-            padding: 20px;
-
-            box-sizing: border-box;
-
-            position: relative;
-
-        }
-
-        .product-card img {
-
-            max-width: 100%;
-
-            border-radius: 10px;
-
-        }
-
-        .product-card h3 {
-
-            font-size: 18px;
-
-            margin: 10px 0;
-
-        }
-
-        .product-card a {
-
-            color: #888;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            cursor: pointer;
-
-        }
-
-        .product-card a:hover {
-
-            color: #e60000;
-
-        }
-
-        .product-description {
-
-            display: none;
-
-            font-size: 14px;
-
-            color: #555;
-
-            margin-top: 10px;
-
-        }
-
-        .view-products-btn {
-
-            display: block;
-
-            width: 200px;
-
-            margin: 40px auto 0;
-
-            padding: 10px 20px;
-
-            background-color: #e60000;
-
-            color: #fff;
-
-            text-align: center;
-
-            border-radius: 5px;
-
-            text-decoration: none;
-
-            font-size: 16px;
-
-        }
-
-        .view-products-btn:hover {
-
-            background-color: #cc0000;
-
-        }
-
-        @media (max-width: 768px) {
-
-            .product-card {
-
-                flex: 1 1 calc(50% - 20px);
-
-                max-width: calc(50% - 20px);
-
-            }
-
-        }
-
-        @media (max-width: 480px) {
-
-            .product-card {
-
-                flex: 1 1 100%;
-
-                max-width: 100%;
-
-            }
-
-        }
-</style>
-
-</head>
-<body>
-<div class="container">
-<div class="title">PRODUCT RANGE</div>
-<div class="product-grid">
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Steel - Image of steel products">
-<h3>STEEL</h3>
-<a onclick="toggleDescription('desc1')">View &gt;</a>
-<div id="desc1" class="product-description">
-
-                    High-quality steel for various industrial applications.
-</div>
-</div>
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Pipes - Image of metal pipes">
-<h3>PIPES</h3>
-<a onclick="toggleDescription('desc2')">View &gt;</a>
-<div id="desc2" class="product-description">
-
-                    Durable pipes suitable for a wide range of uses.
-</div>
-</div>
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Fittings - Image of metal fittings">
-<h3>FITTINGS</h3>
-<a onclick="toggleDescription('desc3')">View &gt;</a>
-<div id="desc3" class="product-description">
-
-                    Precision-engineered fittings for various applications.
-</div>
-</div>
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Bolts & Nuts - Image of bolts and nuts">
-<h3>BOLTS & NUTS</h3>
-<a onclick="toggleDescription('desc4')">View &gt;</a>
-<div id="desc4" class="product-description">
-
-                    High-strength bolts and nuts for secure connections.
-</div>
-</div>
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Fabrication - Image of fabrication process">
-<h3>FABRICATION</h3>
-<a onclick="toggleDescription('desc5')">View &gt;</a>
-<div id="desc5" class="product-description">
-
-                    Custom fabrication services for various needs.
-</div>
-</div>
-<div class="product-card">
-<img src="https://placehold.co/300x200" alt="Machining - Image of machining process">
-<h3>MACHINING</h3>
-<a onclick="toggleDescription('desc6')">View &gt;</a>
-<div id="desc6" class="product-description">
-
-                    Precision machining services for high-quality parts.
-</div>
-</div>
-</div>
-<a class="view-products-btn" href="products.html">View Products</a>
-</div>
-</body>
+   .footer-bottom {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     border-top: 1px solid balck;
+     padding-top: 1rem;
+     margin-top: 1rem;
+   }
+   .footer-bottom p {
+     color: black;
+     font-size: 0.875rem;
+     margin: 0;
+   }
+   .social-icons {
+     display: flex;
+     margin-top: 1rem;
+   }
+   .social-icons a {
+     color: black;
+     margin: 0 0.5rem;
+     text-decoration: none;
+   }
+   .social-icons a:hover {
+     color: red;
+   }
+   @media (min-width: 768px) {
+     .footer-content {
+       flex-direction: row;
+       justify-content: space-between;
+     }
+     .footer-columns {
+       flex-direction: row;
+       align-items: flex-start;
+       gap: 2rem;
+     }
+     .footer-column {
+       margin-bottom: 0;
+       text-align: left;
+     }
+     .footer-column.subscribe {
+       padding-left: 1rem;
+     }
+     .footer-bottom {
+       flex-direction: row;
+       justify-content: space-between;
+     }
+   }
+  </style>
+ </head>
+ <body>
+  <footer>
+   <div class="footercontainer">
+    <div class="footer-content">
+     <div class="footer-column">
+      <img alt="MERAFE STEEL SUPPLY (PTY) LTD" height="100" src="./Assets/images/logo-removebg-preview (3).png" width="150px"/>
+     </div>
+     <div class="footer-columns">
+      <div class="footer-column">
+       <h3>Company</h3>
+       <ul>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+       </ul>
+      </div>
+      <div class="footer-column">
+       <h3>Quick Link</h3>
+       <ul>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Resources</a>
+        </li>
+        <li><a href="#">Products</a></li>
+       </ul>
+      </div>
+      <div class="footer-column contact-info">
+       <h3>CONTACT INFO</h3>
+       <ul>
+        <li><i class="fas fa-map-marker-alt"></i>
+         126 GENERAL HERTZOG STR<br/>THREE RIVER VEREENIGING 1930
+        </li>
+        <li><i class="fas fa-envelope"></i> merafesteelsupply@gmail.com</li>
+        <li><i class="fas fa-phone"></i>16 931 0611</li>
+       </ul>
+      </div>
+      <div class="footer-column subscribe">
+       <h3>Subscribe
+       </h3>
+       <form class="subscribe-form">
+        <input placeholder="Get product updates" type="email"/>
+        <button type="submit">
+         <i class="fas fa-arrow-right">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+    <div class="fade-line"></div>
+    <div class="footer-bottom">
+     <p>© 2025 MERAFE STEEL SUPPLY (PTY) LTD. All rights reserved
+     </p>
+     <div class="social-icons">
+      <a href="#">
+       <i class="fab fa-linkedin">
+       </i>
+      </a>
+      <a href="#">
+       <i class="fab fa-facebook">
+       </i>
+      </a>
+      <a href="#">
+       <i class="fab fa-whatsapp">
+       </i>
+      </a>
+      <a href="#">
+       <i class="fas fa-envelope">
+       </i>
+      </a>
+      <a href="#">
+       <i class="fas fa-phone">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
 </html>
- 
