@@ -62,3 +62,11 @@ function toggleCardContent(id) {
 function viewMore(id) {
     alert("Viewing more details for " + id);
 }
+// JavaScript for toggling the burger menu
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+// Toggle the "show" class on click
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});

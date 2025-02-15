@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
    
     <style>
-      .contact-container {
+.contact-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -43,28 +43,94 @@
     border-bottom: 2px solid #070707; /* Adds the underline */
 }
 
-      
-      .contact-content p {
-          font-size: 16px;
-          margin-bottom: 20px;
-          color: black;
-      }
-      .contact-info {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 15px;
-      }
-      .contact-info-icon {
-          color: red;
-          font-size: 24px;
-          margin-right: 10px;
-      }
-      .map-container {
-            width: 900px;
-            height: 400px;
-            box-shadow: 0 0 10px red;
-            border: 0;
-        }
+.contact-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-info-icon {
+    color: red;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    box-shadow: 0 0 10px red;
+    border: 0;
+    position: relative; /* Make sure the map container is positioned */
+    overflow: hidden; /* Hide any overflow from the map */
+}
+
+/* Ensure controls stay within the map container */
+.map-container .leaflet-control {
+    position: absolute;
+    z-index: 10; /* Ensure controls are on top of the map */
+    top: 10px;
+    right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .contact-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .map-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content h2 {
+        font-size: 1.5rem; /* Smaller font size for headings */
+    }
+
+    .contact-content p {
+        font-size: 14px; /* Smaller font size for paragraphs */
+    }
+
+    .contact-info-icon {
+        font-size: 20px; /* Smaller icon size */
+    }
+
+    .map-container {
+        height: 250px; /* Further adjust height for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content h2 {
+        font-size: 1.2rem; /* Even smaller font size for headings */
+    }
+
+    .contact-content p {
+        font-size: 12px; /* Even smaller font size for paragraphs */
+    }
+
+    .contact-info {
+        flex-direction: column; /* Stack contact info vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .contact-info-icon {
+        font-size: 18px; /* Smaller icon size */
+    }
+
+    .map-container {
+        height: 200px; /* Further adjust height for very small screens */
+    }
+}
+
   </style>
 </head>
 <body>
@@ -323,7 +389,7 @@
         var map = L.map('map').setView([location.lat, location.lng], 15);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: ''
         }).addTo(map);
         
         L.marker([location.lat, location.lng]).addTo(map)
