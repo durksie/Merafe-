@@ -1,105 +1,139 @@
-/* Large screens (Desktops, Laptops) */
-@media (max-width: 1200px) {
-  .navbar {
-      padding: 0 30px;
-  }
-  .hero-content {
-      margin-top: 80px; /* Moves content slightly down */
-  }
-  .hero h1 {
-      font-size: 32px;
-  }
-  .hero p {
-      font-size: 16px;
-  }
-}
-
-/* Tablets and Small Laptops */
-@media (max-width: 1024px) {
-  .navbar {
-      padding: 0 20px;
-  }
-  .nav-links {
-      gap: 1.5rem;
-  }
-  .hero-content {
-      margin-top: 100px; /* Slightly more space for smaller screens */
-  }
-  .hero h1 {
-      font-size: 28px;
-  }
-  .hero p {
-      font-size: 14px;
-  }
-}
-
-/* Tablets (Portrait & Landscape) */
-@media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      padding: 10px 20px;
-  }
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      background: rgba(0, 0, 0, 0.9);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-  }
-  .nav-links.show {
-      display: flex;
-  }
-  .burger {
-      display: block;
-  }
-  .hero-content {
-      margin-top: 120px; /* Adjusted for mobile layout */
-  }
-  .hero h1 {
-      font-size: 24px;
-  }
-  .hero p {
-      font-size: 12px;
-  }
-}
-
-/* Mobile Devices (Phones) */
-@media (max-width: 480px) {
-  .navbar {
-      padding: 10px;
-  }
-  .hero-content {
-      margin-top: 140px; /* Moves content lower */
-  }
-  .hero h1 {
-      font-size: 20px;
-  }
-  .hero p {
-      font-size: 12px;
-  }
-  .btn {
-      font-size: 14px;
-      padding: 10px;
-  }
-}
-
-/* Landscape Orientation for Tablets and Phones */
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero-content {
-      margin-top: 100px; /* Keeps it visible in landscape */
-  }
-  .hero h1 {
-      font-size: 24px;
-  }
-  .hero p {
-      font-size: 14px;
-  }
-  .btn {
-      font-size: 14px;
-      padding: 8px;
-  }
-}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+        .red-shadow {
+            box-shadow: 0 4px 6px rgba(227, 52, 47, 0.5);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .text-red-600 {
+            color: #e3342f;
+        }
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+        .font-bold {
+            font-weight: 700;
+        }
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        .bg-white {
+            background-color: white;
+        }
+        .p-6 {
+            padding: 1.5rem;
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        .w-16 {
+            width: 4rem;
+        }
+        .h-16 {
+            height: 4rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .text-gray-600 {
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <main class="py-16">
+        <section class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-red-600">SERVICES</h2>
+            <h3 class="text-3xl font-bold mt-2">A wide range of steel supply services</h3>
+        </section>
+        <section class="container">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/GhCuX4IHje8_w9MuTN9HSDroNwxN_jL4prdhDvBhotk.jpg" alt="Industrial Cleaning Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">INDUSTRIAL CLEANING</h4>
+                    <p class="text-gray-600 mb-4">We provide comprehensive industrial cleaning services to ensure your facilities are spotless and safe.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/40Ej6CtY1eu8TT8phoL4Bk3WCWs-38wPUsb6qTtqNnI.jpg" alt="Plant Cleaning Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">PLANT CLEANING</h4>
+                    <p class="text-gray-600 mb-4">Our plant cleaning services help maintain the efficiency and longevity of your equipment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/high-pressure-cleaning-steel-new.jpg" alt="High Pressure Cleaning Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">HIGH PRESSURE CLEANING</h4>
+                    <p class="text-gray-600 mb-4">Our high pressure cleaning services remove stubborn dirt and grime from any surface.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/buTQ3VCYSz-XNgBYgY1Vs25AkkkdTgVkQgUkj1EY_2E.jpg" alt="Super Sucker Work Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">SUPER SUCKER WORK</h4>
+                    <p class="text-gray-600 mb-4">Our super sucker work services handle the toughest cleaning jobs with ease.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/UQezhbKddgCwmWJ0Wezod8ixr9gMgE80TbW_JWaETGM.jpg" alt="Waste Management Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">WASTE MANAGEMENT</h4>
+                    <p class="text-gray-600 mb-4">We offer efficient waste management solutions to keep your operations running smoothly.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg red-shadow text-center">
+                    <img src="https://storage.googleapis.com/a1aa/image/my81NM7cN8toHlyFh9mDfHsGOIYTLsrgvgtrKkcd4v8.jpg" alt="Transport of Dangerous Goods Icon" class="mx-auto mb-4 w-16 h-16">
+                    <h4 class="text-xl font-semibold mb-2">TRANSPORT OF DANGEROUS GOODS</h4>
+                    <p class="text-gray-600 mb-4">Our transport services ensure the safe and compliant movement of dangerous goods.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+ 

@@ -1,10 +1,10 @@
 
-/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}/* Reset and Global Styles */
+
 
 body {
     font-family: 'Montserrat', sans-serif;

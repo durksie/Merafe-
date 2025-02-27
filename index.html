@@ -140,11 +140,11 @@
                 <img src="./Assets/images/logo-removebg-preview (3).png" alt="MERAFE STEEL SUPPLY (PTY) LTD">
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#" class="explore">EXPLORE MORE</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./contact.html">Contact us</a></li>
+                <li><a href="./explore.html" class="explore">EXPLORE MORE</a></li>
               
               
             </ul>
@@ -164,7 +164,7 @@
                   fabrication, machining, industrial cleaning, and hydraulic 
                   solutions, ensuring efficiency, precision, and reliability 
                   in every project. </p>
-                   <button class="btn" onclick="location.href='#'">GET IN TOUCH</button>
+                   <a href="./contact.html"><button class="btn" >GET IN TOUCH</button></a>
 
         </div>
     </section>
@@ -344,12 +344,27 @@
         <h3>Subscribe
         </h3>
         <form class="subscribe-form">
-         <input placeholder="Get product updates" type="email"/>
-         <button type="submit">
-          <i class="fas fa-arrow-right">
-          </i>
-         </button>
-        </form>
+            <input id="email-input" placeholder="Get product updates" type="email" required/>
+            <button type="submit">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+          <p id="success-message" style="color: green; display: none;">Subscription successful! Check your email for updates.</p>
+          <script>
+            document.querySelector(".subscribe-form").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent form submission
+              let emailInput = document.getElementById("email-input");
+              let successMessage = document.getElementById("success-message");
+          
+              if (emailInput.value.trim() !== "") {
+                successMessage.style.display = "block"; // Show success message
+                emailInput.value = ""; // Clear input field
+                setTimeout(() => {
+                  successMessage.style.display = "none"; // Hide after 3 seconds
+                }, 3000);
+              }
+            });
+          </script>          
        </div>
       </div>
      </div>
