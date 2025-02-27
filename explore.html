@@ -40,11 +40,27 @@
 </head>
 <body>
     <header class="bg-[#333] text-white py-8 flex items-center justify-center px-4 md:px-8 relative fade-in">
-       <a href="./index.html"><img alt="Merafe Steel Supply Logo" class="h-full w-auto absolute left-4 top-0 bottom-0 my-auto logo-hover" src="./Assets/images/logo-removebg-preview (3).png"/></a> 
-        <div class="text-center">
-            <h1 class="text-3xl font-bold text-shadow">Explore More</h1>
-            <p class="text-lg mt-2">Meet the team behind Merafe Steel Supply</p>
+        <a href="./index.html">
+            <img alt="Merafe Steel Supply Logo" class="h-full w-auto absolute left-4 top-0 bottom-0 my-auto logo-hover hidden sm:block" src="./Assets/images/logo-removebg-preview (3).png"/>
+            <img alt="Merafe Steel Supply Logo" class="h-12 w-auto mx-auto mb-4 logo-hover sm:hidden" src="./Assets/images/logo-removebg-preview (3).png"/>
+        </a> 
+        <div class="text-center sm:text-center">
+            <h1 class="text-2xl sm:text-3xl font-bold text-shadow">Explore More</h1>
+            <p class="text-base sm:text-lg mt-2">Meet the team behind Merafe Steel Supply</p>
         </div>
+        <style>
+            @media (max-width: 640px) {
+                header {
+                    flex-direction: column;
+                    padding-top: 4rem;
+                    padding-bottom: 4rem;
+                }
+                
+                header .text-center {
+                    margin-top: 0.5rem;
+                }
+            }
+        </style>
     </header>
     <main class="container mx-auto py-12 fade-in">
         <section class="mb-12 flex flex-col md:flex-row items-center">
